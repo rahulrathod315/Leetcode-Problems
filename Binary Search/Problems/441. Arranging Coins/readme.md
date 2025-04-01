@@ -67,7 +67,6 @@ The problem can be solved using **Binary Search**. The idea is to find the maxim
 Here is the implementation of the solution in C++:
 
 ```cpp
-// filepath: /Users/rahulrathod/Personal Work/Binary Search/Problems/441. Arranging Coins/code.cpp
 #include <iostream>
 
 using namespace std;
