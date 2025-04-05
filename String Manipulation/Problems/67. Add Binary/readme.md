@@ -58,7 +58,6 @@ This approach involves converting the binary strings to integers, performing the
 #### Implementation
 
 ```cpp
-// filepath: /Users/rahulrathod/Personal Work/Leetcode-Problems/String Manipulation/Problems/67. Add Binary/solution_approach1.cpp
 class Solution {
 public:
     int binaryToInt(string binaryNum)
@@ -100,6 +99,17 @@ public:
 
 Output: `"100"`.
 
+#### Issue
+
+This approach fails for large inputs due to the constraints of integer data types. For example, given the inputs:
+
+```
+a = "10100000100100110110010000010101111011011001101110111111111101000000101111001110001111100001101"
+b = "110101001011101110001111100110001010100001101011101010000011011011001011101111001100000011011110011"
+```
+
+The binary strings exceed the range of standard integer types like `int` or `long long`, causing overflow and incorrect results.
+
 #### Complexity Analysis
 
 1. **Time Complexity**: `O(n + m)`
@@ -130,7 +140,6 @@ To handle large inputs, the addition is performed directly on the binary strings
 #### Implementation
 
 ```cpp
-// filepath: /Users/rahulrathod/Personal Work/Leetcode-Problems/String Manipulation/Problems/67. Add Binary/solution_approach2.cpp
 class Solution {
 public:
     string addBinary(string a, string b) 
@@ -229,7 +238,6 @@ This is the most optimized approach. Instead of modifying the strings, we use in
 #### Implementation
 
 ```cpp
-// filepath: /Users/rahulrathod/Personal Work/Leetcode-Problems/String Manipulation/Problems/67. Add Binary/solution_approach3.cpp
 class Solution {
 public:
     string addBinary(string a, string b) 
