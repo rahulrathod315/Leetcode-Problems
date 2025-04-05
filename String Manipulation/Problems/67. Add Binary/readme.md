@@ -58,32 +58,36 @@ This approach involves converting the binary strings to integers, performing the
 #### Implementation
 
 ```cpp
+// filepath: /Users/rahulrathod/Personal Work/Leetcode-Problems/String Manipulation/Problems/67. Add Binary/solution_approach1.cpp
 class Solution {
 public:
+    // Convert a binary string to an integer
     int binaryToInt(string binaryNum)
     {
         long long result = 0;
-        for(auto ch : binaryNum)
-            result = (result * 2) + (ch - '0');
+        for(auto ch : binaryNum) // Traverse each character in the binary string
+            result = (result * 2) + (ch - '0'); // Update result by shifting left and adding the current bit
         return result;
     }
 
+    // Convert an integer to a binary string
     string intToBinaryString(int num)
     {
         string result = "";
 
-        while(num)
+        while(num) // Extract binary digits using modulo and division
         {
-            result = to_string(num % 2) + result;
-            num = num / 2;
+            result = to_string(num % 2) + result; // Append the least significant bit to the result
+            num = num / 2; // Divide the number by 2
         }
-        return result == "" ? "0" : result;
+        return result == "" ? "0" : result; // Return "0" if the result is empty
     }
 
+    // Add two binary strings
     string addBinary(string a, string b) 
     {
-        int sum = binaryToInt(a) + binaryToInt(b);
-        return intToBinaryString(sum);
+        int sum = binaryToInt(a) + binaryToInt(b); // Convert both strings to integers, add them
+        return intToBinaryString(sum); // Convert the sum back to a binary string
     }
 };
 ```
@@ -132,7 +136,13 @@ To handle large inputs, the addition is performed directly on the binary strings
 
 2. **Bitwise Addition**:
    - Traverse the strings from the least significant bit to the most significant bit.
-   - Use XOR (`^`) for addition and AND (`&`) for carry.
+   - Use the following rules for addition:
+     - If `carry == 0`:
+       - Compute the sum as `XOR (^)` of the two bits.
+       - Compute the updated carry as `AND (&)` of the two bits.
+     - If `carry == 1`:
+       - Compute the sum as `XNOR (~(XOR))` of the two bits.
+       - Compute the updated carry as `OR (|)` of the two bits.
 
 3. **Carry Handling**:
    - If there is a carry left after processing all bits, append it to the result.
@@ -140,52 +150,53 @@ To handle large inputs, the addition is performed directly on the binary strings
 #### Implementation
 
 ```cpp
+// filepath: /Users/rahulrathod/Personal Work/Leetcode-Problems/String Manipulation/Problems/67. Add Binary/solution_approach2.cpp
 class Solution {
 public:
     string addBinary(string a, string b) 
     {
-        string result = "";
-        bool sum = 0;
-        bool carry = 0;
+        string result = ""; // Initialize the result string
+        bool sum = 0; // Variable to store the sum of current bits
+        bool carry = 0; // Variable to store the carry
 
         // Pad the shorter string with leading zeros
         if(a.length() > b.length())
         {
-            b = string(a.length() - b.length(), '0') + b;
+            b = string(a.length() - b.length(), '0') + b; // Add leading zeros to b
         }
         else
         {
-            a = string(b.length() - a.length(), '0') + a;
+            a = string(b.length() - a.length(), '0') + a; // Add leading zeros to a
         }
 
         // Perform addition from the least significant bit to the most significant bit
         while(a.length() > 0)
         {
-            bool x = (a[a.length() - 1] == '1');
-            bool y = (b[b.length() - 1] == '1');
+            bool x = (a[a.length() - 1] == '1'); // Get the last bit of a
+            bool y = (b[b.length() - 1] == '1'); // Get the last bit of b
 
             if(carry == 0)
             {
-                sum = x ^ y;
-                carry = x & y;
+                sum = x ^ y; // XOR for sum when carry is 0
+                carry = x & y; // AND for carry when carry is 0
             }
             else
             {
-                sum = !(x ^ y);
-                carry = x | y;
+                sum = !(x ^ y); // XNOR for sum when carry is 1
+                carry = x | y; // OR for carry when carry is 1
             }
 
-            result = to_string(sum) + result;
+            result = to_string(sum) + result; // Append the sum to the result
 
-            a.pop_back();
-            b.pop_back();
+            a.pop_back(); // Remove the last bit of a
+            b.pop_back(); // Remove the last bit of b
         }
 
         // If there is a carry left, add it to the result
         if(carry)
             result = to_string(carry) + result;
 
-        return result;
+        return result; // Return the final binary sum
     }
 };
 ```
@@ -196,10 +207,10 @@ public:
 
 1. Pad the strings: `a = "1010"`, `b = "1011"`.
 2. Traverse from the end:
-   - Add `0 + 1 + carry(0) = 1`, result = `"1"`, carry = `0`.
-   - Add `1 + 1 + carry(0) = 0`, result = `"01"`, carry = `1`.
-   - Add `0 + 0 + carry(1) = 1`, result = `"101"`, carry = `0`.
-   - Add `1 + 1 + carry(0) = 0`, result = `"0101"`, carry = `1`.
+   - Add `0 + 1 + carry(0)`: `sum = 0 ^ 1 = 1`, `carry = 0 & 1 = 0`, result = `"1"`.
+   - Add `1 + 1 + carry(0)`: `sum = 1 ^ 1 = 0`, `carry = 1 & 1 = 1`, result = `"01"`.
+   - Add `0 + 0 + carry(1)`: `sum = !(0 ^ 0) = 1`, `carry = 0 | 0 = 0`, result = `"101"`.
+   - Add `1 + 1 + carry(0)`: `sum = 1 ^ 1 = 0`, `carry = 1 & 1 = 1`, result = `"0101"`.
 3. Append carry: result = `"10101"`.
 
 Output: `"10101"`.
@@ -238,31 +249,32 @@ This is the most optimized approach. Instead of modifying the strings, we use in
 #### Implementation
 
 ```cpp
+// filepath: /Users/rahulrathod/Personal Work/Leetcode-Problems/String Manipulation/Problems/67. Add Binary/solution_approach3.cpp
 class Solution {
 public:
     string addBinary(string a, string b) 
     {
-        string result = "";
-        int i = a.length() - 1;
-        int j = b.length() - 1;
-        int carry = 0;
+        string result = ""; // Initialize the result string
+        int i = a.length() - 1; // Pointer for the last bit of a
+        int j = b.length() - 1; // Pointer for the last bit of b
+        int carry = 0; // Variable to store the carry
 
         // Traverse both strings from the end
         while(i >= 0 || j >= 0 || carry)
         {
-            int sum = carry;
+            int sum = carry; // Start with the carry from the previous step
 
             if(i >= 0)
-                sum += a[i--] - '0'; // Add the current bit of string a
+                sum += a[i--] - '0'; // Add the current bit of a to sum and move the pointer
 
             if(j >= 0)
-                sum += b[j--] - '0'; // Add the current bit of string b
+                sum += b[j--] - '0'; // Add the current bit of b to sum and move the pointer
 
-            result = to_string(sum % 2) + result; // Append the current bit to the result
+            result = to_string(sum % 2) + result; // Append the least significant bit of sum to the result
             carry = sum / 2; // Update the carry
         }
 
-        return result;
+        return result; // Return the final binary sum
     }
 };
 ```
