@@ -30,7 +30,7 @@ Output: "10101"
 
 ## Approach
 
-The problem can be solved using multiple approaches:
+The problem can be solved using multiple approaches. Below are the detailed explanations and implementations.
 
 ---
 
@@ -192,6 +192,88 @@ public:
    - Add `0 + 0 + carry(1) = 1`, result = `"101"`, carry = `0`.
    - Add `1 + 1 + carry(0) = 0`, result = `"0101"`, carry = `1`.
 3. Append carry: result = `"10101"`.
+
+Output: `"10101"`.
+
+#### Complexity Analysis
+
+1. **Time Complexity**: `O(max(n, m))`
+   - Traverses both strings once.
+
+2. **Space Complexity**: `O(max(n, m))`
+   - The result string requires space proportional to the length of the longer string.
+
+---
+
+### Approach 3: Optimized Binary Addition Using Indices
+
+#### Explanation
+
+This is the most optimized approach. Instead of modifying the strings, we use indices to traverse the strings from the end to the beginning. This avoids the overhead of string operations like `pop_back()`.
+
+1. **Initialization**:
+   - Use two pointers `i` and `j` to traverse the strings `a` and `b` from the end.
+   - Use a `carry` variable to keep track of the carry from the previous addition.
+
+2. **Binary Addition**:
+   - Add the current bits of `a` and `b` (if they exist) along with the carry.
+   - Append the least significant bit of the sum (`sum % 2`) to the result.
+   - Update the carry as the most significant bit of the sum (`sum / 2`).
+
+3. **Handle Remaining Carry**:
+   - If there is a carry left after processing all bits, append it to the result.
+
+4. **Reverse the Result**:
+   - Since the result is built in reverse order, reverse it before returning.
+
+#### Implementation
+
+```cpp
+// filepath: /Users/rahulrathod/Personal Work/Leetcode-Problems/String Manipulation/Problems/67. Add Binary/solution_approach3.cpp
+class Solution {
+public:
+    string addBinary(string a, string b) 
+    {
+        string result = "";
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+        int carry = 0;
+
+        // Traverse both strings from the end
+        while(i >= 0 || j >= 0 || carry)
+        {
+            int sum = carry;
+
+            if(i >= 0)
+                sum += a[i--] - '0'; // Add the current bit of string a
+
+            if(j >= 0)
+                sum += b[j--] - '0'; // Add the current bit of string b
+
+            result = to_string(sum % 2) + result; // Append the current bit to the result
+            carry = sum / 2; // Update the carry
+        }
+
+        return result;
+    }
+};
+```
+
+#### Example Walkthrough
+
+##### Input: `a = "1010"`, `b = "1011"`
+
+1. Initialize `i = 3`, `j = 3`, `carry = 0`, `result = ""`.
+2. First iteration:
+   - `sum = 0 + 0 + 1 = 1`, `result = "1"`, `carry = 0`.
+3. Second iteration:
+   - `sum = 1 + 1 + 0 = 2`, `result = "01"`, `carry = 1`.
+4. Third iteration:
+   - `sum = 0 + 0 + 1 = 1`, `result = "101"`, `carry = 0`.
+5. Fourth iteration:
+   - `sum = 1 + 1 + 0 = 2`, `result = "0101"`, `carry = 1`.
+6. Final carry:
+   - `result = "10101"`.
 
 Output: `"10101"`.
 
