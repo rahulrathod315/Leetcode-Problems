@@ -58,7 +58,6 @@ This approach involves converting the binary strings to integers, performing the
 #### Implementation
 
 ```cpp
-// filepath: /Users/rahulrathod/Personal Work/Leetcode-Problems/String Manipulation/Problems/67. Add Binary/solution_approach1.cpp
 class Solution {
 public:
     // Convert a binary string to an integer
@@ -150,7 +149,6 @@ To handle large inputs, the addition is performed directly on the binary strings
 #### Implementation
 
 ```cpp
-// filepath: /Users/rahulrathod/Personal Work/Leetcode-Problems/String Manipulation/Problems/67. Add Binary/solution_approach2.cpp
 class Solution {
 public:
     string addBinary(string a, string b) 
@@ -227,29 +225,39 @@ Output: `"10101"`.
 
 ### Approach 3: Optimized Binary Addition Using Indices
 
-#### Explanation
+#### Intuition
 
-This is the most optimized approach. Instead of modifying the strings, we use indices to traverse the strings from the end to the beginning. This avoids the overhead of string operations like `pop_back()`.
+The goal of this approach is to efficiently add two binary strings without modifying the strings themselves. Instead of removing characters or creating intermediate strings, we use two pointers (`i` and `j`) to traverse the strings from the end (least significant bit) to the beginning (most significant bit). This allows us to directly compute the sum bit by bit while maintaining a carry.
 
-1. **Initialization**:
-   - Use two pointers `i` and `j` to traverse the strings `a` and `b` from the end.
-   - Use a `carry` variable to keep track of the carry from the previous addition.
+Key observations:
+1. **Binary Addition Rules**:
+   - Binary addition follows these rules:
+     - `0 + 0 = 0` (carry = 0)
+     - `0 + 1 = 1` (carry = 0)
+     - `1 + 1 = 0` (carry = 1)
+     - `1 + 1 + carry = 1` (carry = 1)
+   - The carry is propagated to the next higher bit.
 
-2. **Binary Addition**:
-   - Add the current bits of `a` and `b` (if they exist) along with the carry.
-   - Append the least significant bit of the sum (`sum % 2`) to the result.
-   - Update the carry as the most significant bit of the sum (`sum / 2`).
+2. **Pointers for Traversal**:
+   - Start from the last characters of both strings (`i = a.length() - 1` and `j = b.length() - 1`).
+   - Add the corresponding bits along with the carry.
 
-3. **Handle Remaining Carry**:
+3. **Handling Unequal Lengths**:
+   - If one string is shorter, treat the missing bits as `0`.
+
+4. **Carry After Completion**:
    - If there is a carry left after processing all bits, append it to the result.
 
-4. **Reverse the Result**:
-   - Since the result is built in reverse order, reverse it before returning.
+5. **Result Construction**:
+   - Since the result is built from the least significant bit to the most significant bit, it is constructed in reverse order. Reverse the result at the end to get the correct binary sum.
+
+This approach avoids modifying the input strings and minimizes memory usage, making it efficient for large inputs.
+
+---
 
 #### Implementation
 
 ```cpp
-// filepath: /Users/rahulrathod/Personal Work/Leetcode-Problems/String Manipulation/Problems/67. Add Binary/solution_approach3.cpp
 class Solution {
 public:
     string addBinary(string a, string b) 
@@ -279,31 +287,68 @@ public:
 };
 ```
 
+---
+
 #### Example Walkthrough
 
 ##### Input: `a = "1010"`, `b = "1011"`
 
-1. Initialize `i = 3`, `j = 3`, `carry = 0`, `result = ""`.
-2. First iteration:
-   - `sum = 0 + 0 + 1 = 1`, `result = "1"`, `carry = 0`.
-3. Second iteration:
-   - `sum = 1 + 1 + 0 = 2`, `result = "01"`, `carry = 1`.
-4. Third iteration:
-   - `sum = 0 + 0 + 1 = 1`, `result = "101"`, `carry = 0`.
-5. Fourth iteration:
-   - `sum = 1 + 1 + 0 = 2`, `result = "0101"`, `carry = 1`.
-6. Final carry:
-   - `result = "10101"`.
+1. **Initialization**:
+   - `i = 3`, `j = 3`, `carry = 0`, `result = ""`.
 
-Output: `"10101"`.
+2. **Step-by-Step Addition**:
+   - **First Iteration**:
+     - Add `a[3] = 0`, `b[3] = 1`, and `carry = 0`.
+     - `sum = 0 + 1 + 0 = 1`.
+     - Append `1` to `result`: `result = "1"`.
+     - Update `carry = 0`.
+
+   - **Second Iteration**:
+     - Add `a[2] = 1`, `b[2] = 1`, and `carry = 0`.
+     - `sum = 1 + 1 + 0 = 2`.
+     - Append `0` to `result`: `result = "01"`.
+     - Update `carry = 1`.
+
+   - **Third Iteration**:
+     - Add `a[1] = 0`, `b[1] = 0`, and `carry = 1`.
+     - `sum = 0 + 0 + 1 = 1`.
+     - Append `1` to `result`: `result = "101"`.
+     - Update `carry = 0`.
+
+   - **Fourth Iteration**:
+     - Add `a[0] = 1`, `b[0] = 1`, and `carry = 0`.
+     - `sum = 1 + 1 + 0 = 2`.
+     - Append `0` to `result`: `result = "0101"`.
+     - Update `carry = 1`.
+
+3. **Final Carry**:
+   - After processing all bits, `carry = 1`.
+   - Append `1` to `result`: `result = "10101"`.
+
+4. **Output**:
+   - The final result is `"10101"`.
+
+---
 
 #### Complexity Analysis
 
 1. **Time Complexity**: `O(max(n, m))`
-   - Traverses both strings once.
+   - The algorithm processes each bit of the longer string once.
 
 2. **Space Complexity**: `O(max(n, m))`
    - The result string requires space proportional to the length of the longer string.
+
+---
+
+#### Intuition Recap
+
+This approach efficiently handles binary addition by:
+1. Using pointers to traverse the strings from the least significant bit to the most significant bit.
+2. Managing the carry explicitly to propagate it to higher bits.
+3. Constructing the result in reverse order to avoid additional operations on the input strings.
+4. Handling edge cases like unequal string lengths and leftover carry seamlessly.
+
+This makes it the most optimized solution for adding binary strings, especially for large inputs.
 
 ---
 
