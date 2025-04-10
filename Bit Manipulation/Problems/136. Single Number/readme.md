@@ -54,10 +54,6 @@ Using these properties, if we XOR all the numbers in the array, the numbers that
 Here is the implementation of the solution in C++:
 
 ```cpp
-// filepath: /Users/rahulrathod/Personal Work/Leetcode-Problems/Bit Manipulation/Problems/136. Single Number/solution.cpp
-#include <vector>
-using namespace std;
-
 class Solution {
 public:
     int singleNumber(vector<int>& nums) 
