@@ -44,6 +44,7 @@ Tree/
         110. Balanced Binary Tree/
         872. Leaf-Similar Trees/
         94. Binary Tree Inorder Traversal/
+        559. Maximum Depth of N-ary Tree/
 ```
 
 ---
@@ -91,11 +92,12 @@ Tree/
      - [67. Add Binary](String%20Manipulation/Problems/67.%20Add%20Binary/readme.md)
 
 ### 8. **Tree**
-   - Problems related to binary trees, such as traversal, balancing, or comparing structures.
+   - Problems related to binary trees and N-ary trees, such as traversal, balancing, or comparing structures.
    - Example Problems:
      - [110. Balanced Binary Tree](Tree/Problems/110.%20Balanced%20Binary%20Tree/readme.md)
      - [872. Leaf-Similar Trees](Tree/Problems/872.%20Leaf-Similar%20Trees/readme.md)
      - [94. Binary Tree Inorder Traversal](Tree/Problems/94.%20Binary%20Tree%20Inorder%20Traversal/readme.md)
+     - [559. Maximum Depth of N-ary Tree](Tree/Problems/559.%20Maximum%20Depth%20of%20N-ary%20Tree/readme.md)
 
 ---
 
