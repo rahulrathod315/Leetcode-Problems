@@ -43,6 +43,7 @@ Tree/
     Problems/
         110. Balanced Binary Tree/
         872. Leaf-Similar Trees/
+        94. Binary Tree Inorder Traversal/
 ```
 
 ---
@@ -94,6 +95,7 @@ Tree/
    - Example Problems:
      - [110. Balanced Binary Tree](Tree/Problems/110.%20Balanced%20Binary%20Tree/readme.md)
      - [872. Leaf-Similar Trees](Tree/Problems/872.%20Leaf-Similar%20Trees/readme.md)
+     - [94. Binary Tree Inorder Traversal](Tree/Problems/94.%20Binary%20Tree%20Inorder%20Traversal/readme.md)
 
 ---
 
