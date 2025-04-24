@@ -26,6 +26,8 @@ Bit Manipulation/
     Problems/
         136. Single Number/
         191. Number of 1 Bits/
+        231. Power of Two/
+        326. Power of Three/
 Graph/
     Problems/
         997. Find the Town Judge/
@@ -69,6 +71,8 @@ Tree/
    - Example Problems:
      - [136. Single Number](Bit%20Manipulation/Problems/136.%20Single%20Number/readme.md)
      - [191. Number of 1 Bits](Bit%20Manipulation/Problems/191.%20Number%20of%201%20Bits/readme.md)
+     - [231. Power of Two](Bit%20Manipulation/Problems/231.%20Power%20of%20Two/readme.md)
+     - [326. Power of Three](Bit%20Manipulation/Problems/326.%20Power%20of%20Three/readme.md)
 
 ### 4. **Graph**
    - Problems related to graph traversal, connectivity, and properties.
