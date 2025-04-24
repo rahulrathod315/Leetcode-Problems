@@ -39,6 +39,28 @@ Output: false
 
 ---
 
+## Basic Concept
+
+The problem involves determining whether a given integer is a power of two. This is a common problem in computer science, especially in areas like memory allocation and binary arithmetic.
+
+Key concepts:
+1. **Powers of Two**:
+   - A number is a power of two if it can be expressed as `2^x` for some non-negative integer `x`. For example, `1, 2, 4, 8, 16` are powers of two.
+
+2. **Binary Representation**:
+   - In binary, a power of two has exactly one `1` bit. For example:
+     - `1 (2^0) = 0001`
+     - `2 (2^1) = 0010`
+     - `4 (2^2) = 0100`
+
+3. **Bitwise Operations**:
+   - Bitwise operations like AND (`&`) and right shift (`>>`) can be used to efficiently check if a number is a power of two.
+
+4. **Mathematical Properties**:
+   - Powers of two are always positive, and their binary representation makes them easy to identify using bitwise techniques.
+
+---
+
 ## Approaches
 
 ### Approach 1: Recursive Division by 2

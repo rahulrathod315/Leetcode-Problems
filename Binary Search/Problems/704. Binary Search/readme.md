@@ -31,6 +31,25 @@ Explanation: 2 does not exist in nums, so return -1.
 
 ---
 
+## Basic Concept
+
+Binary Search is an efficient algorithm for finding an element in a sorted array. It works by repeatedly dividing the search interval in half.
+
+Key concepts:
+1. **Sorted Array**:
+   - Binary Search requires the input array to be sorted in ascending or descending order.
+
+2. **Divide and Conquer**:
+   - The algorithm eliminates half of the search space in each iteration by comparing the middle element with the target.
+
+3. **Efficiency**:
+   - Binary Search has a time complexity of `O(log n)`, making it much faster than linear search for large datasets.
+
+4. **Applications**:
+   - Used in searching, optimization problems, and finding bounds in sorted arrays.
+
+---
+
 ## Approach
 
 The problem can be solved using the **Binary Search** algorithm. Binary Search is an efficient algorithm for finding an element in a sorted array by repeatedly dividing the search interval in half.

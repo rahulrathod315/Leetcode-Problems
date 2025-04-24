@@ -37,6 +37,27 @@ Output: 1
 
 ---
 
+## Basic Concept
+
+The problem of finding the single number in an array where every other number appears twice is a classic application of bitwise operations.
+
+Key concepts:
+1. **Properties of XOR**:
+   - `a ^ a = 0` (any number XORed with itself is `0`).
+   - `a ^ 0 = a` (any number XORed with `0` remains unchanged).
+   - XOR is commutative and associative, meaning the order of operations does not matter.
+
+2. **Eliminating Duplicates**:
+   - By XORing all the numbers in the array, the duplicate numbers cancel out, leaving only the unique number.
+
+3. **Efficiency**:
+   - This approach requires only a single pass through the array and uses constant space, making it highly efficient.
+
+4. **Applications**:
+   - Used in error detection, cryptography, and problems involving unique elements.
+
+---
+
 ## Approach
 
 The problem can be solved using the **XOR (Exclusive OR)** operation. XOR has the following properties:

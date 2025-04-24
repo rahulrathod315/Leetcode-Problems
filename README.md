@@ -4,6 +4,42 @@ This repository is a collection of solutions to various Leetcode problems, organ
 
 ---
 
+## Basic Concept
+
+This repository focuses on solving algorithmic problems using efficient techniques and data structures. Below are some key concepts covered:
+
+1. **Arrays**:
+   - Operations like searching, sorting, and counting.
+   - Techniques like two-pointer and sliding window.
+
+2. **Binary Search**:
+   - Efficient searching in sorted arrays.
+   - Applications in optimization problems.
+
+3. **Bit Manipulation**:
+   - Using bitwise operations for efficient computation.
+   - Problems like finding unique elements and checking powers of two.
+
+4. **Graphs**:
+   - Traversal techniques like BFS and DFS.
+   - Problems involving connectivity and shortest paths.
+
+5. **Linked Lists**:
+   - Operations like merging, reversing, and detecting cycles.
+   - Recursive and iterative solutions.
+
+6. **Number Theory**:
+   - Mathematical properties of numbers like palindromes and primes.
+
+7. **String Manipulation**:
+   - Operations like parsing, concatenation, and binary arithmetic.
+
+8. **Trees**:
+   - Traversal techniques and depth calculations.
+   - Problems involving binary and N-ary trees.
+
+---
+
 ## Repository Structure
 
 The repository is organized into directories based on problem topics. Each topic contains subdirectories for individual problems, and each problem has its own `readme.md` file explaining the problem, approach, and solution in detail.

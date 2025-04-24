@@ -36,6 +36,25 @@ Explanation: The input binary string 11111111111111111111111111111101 has a tota
 
 ---
 
+## Basic Concept
+
+The problem requires counting the number of `1` bits in the binary representation of an integer. This is also known as calculating the Hamming weight of the number.
+
+Key concepts:
+1. **Binary Representation**:
+   - Every integer can be represented as a sequence of bits (0s and 1s). The task is to count the number of `1`s in this sequence.
+
+2. **Bitwise Operations**:
+   - Bitwise operations like AND (`&`) and right shift (`>>`) are used to isolate and process individual bits of the number.
+
+3. **Iterative Processing**:
+   - By repeatedly checking the least significant bit and shifting the number to the right, all bits can be processed efficiently.
+
+4. **Applications**:
+   - Hamming weight is used in error detection, cryptography, and other areas of computer science.
+
+---
+
 ## Approach
 
 ### Explanation

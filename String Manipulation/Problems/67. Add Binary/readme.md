@@ -28,6 +28,29 @@ Output: "10101"
 
 ---
 
+## Basic Concept
+
+Binary addition is a fundamental operation in computer science and digital systems. The goal is to add two binary strings and return their sum as a binary string.
+
+Key concepts:
+1. **Binary Addition Rules**:
+   - Binary addition follows these rules:
+     - `0 + 0 = 0` (carry = 0)
+     - `0 + 1 = 1` (carry = 0)
+     - `1 + 1 = 0` (carry = 1)
+     - `1 + 1 + carry = 1` (carry = 1).
+
+2. **Carry Propagation**:
+   - Similar to decimal addition, a carry is propagated to the next higher bit when the sum exceeds `1`.
+
+3. **String Traversal**:
+   - Since the input is provided as strings, the addition must be performed by traversing the strings from the least significant bit (end of the string) to the most significant bit (start of the string).
+
+4. **Result Construction**:
+   - The result is constructed bit by bit and may need to be reversed at the end since it is built from the least significant bit to the most significant bit.
+
+---
+
 ## Approach
 
 The problem can be solved using multiple approaches. Below are the detailed explanations and implementations.

@@ -39,6 +39,25 @@ Explanation: n = 9 since there are 9 numbers, so all numbers are in the range [0
 
 ---
 
+## Basic Concept
+
+The problem involves finding the missing number in a sequence of integers ranging from `0` to `n`. This is a classic problem in data validation and error detection.
+
+Key concepts:
+1. **Complete Sequence**:
+   - A complete sequence of integers from `0` to `n` contains exactly `n + 1` elements. If one number is missing, the sequence will have `n` elements.
+
+2. **Mathematical Properties**:
+   - The sum of the first `n` natural numbers is given by the formula `n * (n + 1) / 2`. This property can be used to find the missing number.
+
+3. **Bitwise XOR**:
+   - XOR can be used to find the missing number by canceling out all numbers that appear in both the sequence and the array.
+
+4. **Efficiency**:
+   - The problem can be solved in linear time with constant space using mathematical or bitwise techniques.
+
+---
+
 ## Approaches
 
 ### Approach 1: Using a Boolean Flags Array

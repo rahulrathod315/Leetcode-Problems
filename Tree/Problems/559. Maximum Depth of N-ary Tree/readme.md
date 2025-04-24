@@ -33,6 +33,25 @@ Output: 0
 
 ---
 
+## Basic Concept
+
+The problem involves finding the maximum depth of an N-ary tree. The depth of a tree is the number of nodes along the longest path from the root to a leaf.
+
+Key concepts:
+1. **Tree Structure**:
+   - An N-ary tree is a tree where each node can have up to `N` children. The root node is the starting point of the tree.
+
+2. **Depth Calculation**:
+   - The depth of a tree is calculated by traversing the tree and finding the longest path from the root to any leaf node.
+
+3. **Traversal Techniques**:
+   - Depth-first search (DFS) and breadth-first search (BFS) are commonly used to traverse the tree and calculate its depth.
+
+4. **Recursive and Iterative Solutions**:
+   - Recursive solutions use the call stack to traverse the tree, while iterative solutions use a queue for level-order traversal.
+
+---
+
 ## Approach 1: Recursive Depth-First Search (DFS)
 
 ### Explanation

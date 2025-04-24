@@ -37,6 +37,26 @@ Output: [0]
 
 ---
 
+## Basic Concept
+
+Merging two sorted linked lists is a fundamental operation in linked list manipulation. The goal is to combine two sorted lists into one sorted list while maintaining the sorted order.
+
+Key concepts:
+1. **Sorted Lists**:
+   - Both input lists are sorted in non-decreasing order, which allows efficient merging.
+
+2. **Two-Pointer Technique**:
+   - Use two pointers to traverse the lists and compare elements to build the merged list.
+
+3. **Recursive and Iterative Solutions**:
+   - Recursive solutions are elegant but use additional stack space.
+   - Iterative solutions are more space-efficient.
+
+4. **Applications**:
+   - Used in sorting algorithms like Merge Sort and in scenarios where sorted data needs to be integrated.
+
+---
+
 ## Approach
 
 The problem can be solved using two approaches: **recursion** and **iteration**.

@@ -39,6 +39,25 @@ Output: []
 
 ---
 
+## Basic Concept
+
+The problem involves removing nodes from a linked list that have a specific value. This is a common operation in linked list manipulation.
+
+Key concepts:
+1. **Linked List Structure**:
+   - A linked list is a linear data structure where each node contains a value and a pointer to the next node.
+
+2. **Node Removal**:
+   - To remove a node, the `next` pointer of the previous node is updated to skip the node being removed.
+
+3. **Edge Cases**:
+   - Special care is needed for edge cases, such as when the head node needs to be removed or when the list is empty.
+
+4. **Dummy Node**:
+   - Using a dummy node simplifies the implementation by handling edge cases uniformly.
+
+---
+
 ## Approach 1: Recursive Solution
 
 ### Explanation

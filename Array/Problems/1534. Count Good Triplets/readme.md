@@ -44,6 +44,25 @@ Explanation: No triplets satisfy all conditions.
 
 ---
 
+## Basic Concept
+
+The problem involves finding triplets in an array that satisfy specific conditions. This is a combinatorial problem that requires iterating through all possible triplets and checking the given constraints.
+
+Key concepts:
+1. **Triplets**:
+   - A triplet `(arr[i], arr[j], arr[k])` consists of three elements from the array such that `i < j < k`.
+
+2. **Constraints**:
+   - The problem specifies three conditions involving absolute differences between the elements of the triplet. These constraints must be checked for each triplet.
+
+3. **Brute-Force Approach**:
+   - A straightforward way to solve the problem is to use three nested loops to generate all possible triplets and check the constraints.
+
+4. **Optimization**:
+   - By adding early exit conditions, unnecessary iterations can be avoided, improving efficiency.
+
+---
+
 ## Approach 1: Brute-Force Solution
 
 ### Explanation

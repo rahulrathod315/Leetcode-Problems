@@ -48,6 +48,25 @@ Output: -1
 
 ---
 
+## Basic Concept
+
+The problem involves identifying a special node (the town judge) in a directed graph. The town judge satisfies specific conditions based on trust relationships.
+
+Key concepts:
+1. **Graph Representation**:
+   - The trust relationships can be represented as a directed graph where an edge from `a` to `b` indicates that `a` trusts `b`.
+
+2. **Indegree and Outdegree**:
+   - The town judge has an indegree of `n-1` (trusted by everyone except themselves) and an outdegree of `0` (trusts nobody).
+
+3. **Efficient Identification**:
+   - By tracking the indegree and outdegree of each node, the town judge can be identified in linear time.
+
+4. **Applications**:
+   - Used in social network analysis, reputation systems, and graph theory problems.
+
+---
+
 ## Approach
 
 The problem can be solved using an **indegree-outdegree counting** approach. The idea is to track how many people each person trusts and how many people trust them.
@@ -70,7 +89,6 @@ The problem can be solved using an **indegree-outdegree counting** approach. The
 Here is the implementation of the solution in C++:
 
 ```cpp
-// filepath: /Users/rahulrathod/Personal Work/Leetcode-Problems/Graph/Problems/997. Find the Town Judge/solution.cpp
 #include <vector>
 using namespace std;
 
