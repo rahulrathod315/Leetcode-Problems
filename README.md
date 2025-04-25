@@ -71,6 +71,7 @@ Linked List/
     Problems/
         203. Remove Linked List Elements/
         21. Merge Two Sorted Lists/
+        234. Palindrome Linked List/
 Number Theory/
     Problems/
         9. Palindrome Number/
@@ -120,6 +121,7 @@ Tree/
    - Example Problems:
      - [203. Remove Linked List Elements](Linked%20List/Problems/203.%20Remove%20Linked%20List%20Elements/readme.md)
      - [21. Merge Two Sorted Lists](Linked%20List/Problems/21.%20Merge%20Two%20Sorted%20Lists/readme.md)
+     - [234. Palindrome Linked List](Linked%20List/Problems/234.%20Palindrome%20Linked%20List/readme.md)
 
 ### 6. **Number Theory**
    - Problems that involve mathematical properties of numbers, such as palindromes or prime numbers.
