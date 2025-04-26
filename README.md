@@ -75,6 +75,7 @@ Linked List/
 Number Theory/
     Problems/
         9. Palindrome Number/
+        263. Ugly Number/
 String Manipulation/
     Problems/
         67. Add Binary/
@@ -127,6 +128,7 @@ Tree/
    - Problems that involve mathematical properties of numbers, such as palindromes or prime numbers.
    - Example Problems:
      - [9. Palindrome Number](Number%20Theory/Problems/9.%20Palindrome%20Number/readme.md)
+     - [263. Ugly Number](Number%20Theory/Problems/263.%20Ugly%20Number/readme.md)
 
 ### 7. **String Manipulation**
    - Problems that involve operations on strings, such as concatenation, parsing, or binary arithmetic.
