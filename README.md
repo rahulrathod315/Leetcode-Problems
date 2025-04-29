@@ -79,6 +79,7 @@ Number Theory/
 String Manipulation/
     Problems/
         67. Add Binary/
+        3304. Find the K-th Character in String Game I/
 Tree/
     Problems/
         110. Balanced Binary Tree/
