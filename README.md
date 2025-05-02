@@ -54,6 +54,7 @@ Array/
         1534. Count Good Triplets/
         268. Missing Number/
         88. Merge Sorted Array/
+        66. Plus One/
 Binary Search/
     Problems/
         441. Arranging Coins/
@@ -98,6 +99,7 @@ Tree/
      - [1534. Count Good Triplets](Array/Problems/1534.%20Count%20Good%20Triplets/readme.md)
      - [268. Missing Number](Array/Problems/268.%20Missing%20Number/readme.md)
      - [88. Merge Sorted Array](Array/Problems/88.%20Merge%20Sorted%20Array/readme.md)
+     - [66. Plus One](Array/Problems/66.%20Plus%20One/readme.md)
 
 ### 2. **Binary Search**
    - Problems that involve searching in sorted arrays or solving optimization problems using the binary search algorithm.
@@ -135,6 +137,7 @@ Tree/
    - Problems that involve operations on strings, such as concatenation, parsing, or binary arithmetic.
    - Example Problems:
      - [67. Add Binary](String%20Manipulation/Problems/67.%20Add%20Binary/readme.md)
+     - [3304. Find the K-th Character in String Game I](String%20Manipulation/Problems/3304.%20Find%20the%20K-th%20Character%20in%20String%20Game%20I/readme.md)
 
 ### 8. **Tree**
    - Problems related to binary trees and N-ary trees, such as traversal, balancing, or comparing structures.
