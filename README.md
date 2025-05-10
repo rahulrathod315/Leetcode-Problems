@@ -104,6 +104,7 @@ Tree/
 ### 2. **Binary Search**
    - Problems that involve searching in sorted arrays or solving optimization problems using the binary search algorithm.
    - Example Problems:
+     - [278. First Bad Version](Binary%20Search/Problems/278.%20First%20Bad%20Version/readme.md)
      - [441. Arranging Coins](Binary%20Search/Problems/441.%20Arranging%20Coins/readme.md)
      - [704. Binary Search](Binary%20Search/Problems/704.%20Binary%20Search/readme.md)
 
