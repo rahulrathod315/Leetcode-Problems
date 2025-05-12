@@ -107,6 +107,7 @@ Tree/
      - [278. First Bad Version](Binary%20Search/Problems/278.%20First%20Bad%20Version/readme.md)
      - [441. Arranging Coins](Binary%20Search/Problems/441.%20Arranging%20Coins/readme.md)
      - [704. Binary Search](Binary%20Search/Problems/704.%20Binary%20Search/readme.md)
+     - [35. Search Insert Position](Binary%20Search/Problems/35.%20Search%20Insert%20Position/readme.md)
 
 ### 3. **Bit Manipulation**
    - Problems that leverage bitwise operations to solve efficiently.
