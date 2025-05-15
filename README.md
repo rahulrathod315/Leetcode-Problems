@@ -110,6 +110,7 @@ Tree/
      - [35. Search Insert Position](Binary%20Search/Problems/35.%20Search%20Insert%20Position/readme.md)
      - [374. Guess Number Higher or Lower](Binary%20Search/Problems/374.%20Guess%20Number%20Higher%20or%20Lower/readme.md)
      - [33. Search in Rotated Sorted Array](Binary%20Search/Problems/33.%20Search%20in%20Rotated%20Sorted%20Array/readme.md)
+     - [81. Search in Rotated Sorted Array II](Binary%20Search/Problems/81.%20Search%20in%20Rotated%20Sorted%20Array%20II/readme.md)
 
 ### 3. **Bit Manipulation**
    - Problems that leverage bitwise operations to solve efficiently.
